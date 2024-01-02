@@ -51,7 +51,7 @@
 
 	<div class="mb-6">
 		<label for="default-input" class="mb-2 block text-lg font-medium text-gray-900 dark:text-white"
-			>You are searching: {searchInput}</label
+			>Searching: {searchInput}</label
 		>
 		<input
 			type="text"
