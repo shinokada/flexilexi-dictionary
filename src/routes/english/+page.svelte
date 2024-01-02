@@ -1,33 +1,32 @@
 <script>
-	import dictionary from '$lib/eng-dictionary.json';
+	import dictionary from '$lib/EDMTDictionary.json';
 	import Fuse from 'fuse.js';
 
 	let threshold = $state(0);
 
 	let options = $derived({
-		keys: ["value"],
+		keys: ['word', 'description'],
 		threshold: threshold
 	});
 
 	let fuse;
 	let searchInput = $state();
 
-	// fuse = new Fuse(dictionary, options);
-	const dictionaryArray = Object.keys(dictionary).map(key => ({ value: dictionary[key] }));
-
- fuse = new Fuse(dictionaryArray, options);
+	fuse = new Fuse(dictionary, options);
 
 	let searchResults = $state([]);
 
 	function handleSearch() {
 		searchResults = fuse.search(searchInput);
-		console.log('search ', searchResults);
+		// console.log('search ', searchResults);
 	}
 
 	function handleThreshold() {
-		fuse = new Fuse(dictionaryArray, options);
+		fuse = new Fuse(dictionary, options);
 		searchResults = fuse.search(searchInput);
 	}
+
+	// const myresult = fuse.search('metanol')
 </script>
 
 <main class="m-8">
@@ -62,7 +61,7 @@
 
 	<ul class="max-w-md list-inside list-disc space-y-1 text-gray-500 dark:text-gray-400">
 		{#each searchResults as result}
-			<li>{result.item.value}</li>
+			<li>{result.item.word}: ({result.item.description}): {result.item.english}</li>
 		{/each}
 	</ul>
 </main>
