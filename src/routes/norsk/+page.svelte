@@ -3,7 +3,6 @@
   import {FlexiLexi} from "$lib";
   let keys = ['norsk', 'english']
   let title = 'Norsk ordbok'
-  // dictionary, keys, title
 </script>
 
 <FlexiLexi {dictionary} {keys} {title} />
