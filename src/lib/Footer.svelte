@@ -7,7 +7,7 @@
     <div class="sm:flex sm:items-center sm:justify-between">
         <a href="/" class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse z-10">
       
-          <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">LexiLearn Network</span>
+          <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">LexiLearn Hub</span>
         </a>
         <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400 z-10">
           <li>
