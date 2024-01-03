@@ -1,6 +1,6 @@
 <script>
 	// import dictionary from '$lib/three-thousand-all.json';
-  let { dictionary, keys, title, thresholdValue = 0 } = $props()
+  let { dictionary, keys, fields=[], title, subTitle, thresholdValue = 0 } = $props()
 	import Fuse from 'fuse.js';
 
 	let threshold = $state(thresholdValue);
@@ -10,6 +10,11 @@
 		threshold
 	});
 
+	if(!fields.length){
+		fields = keys
+	}
+
+	$inspect('fields: ', fields)
 	let fuse;
 	let searchInput = $state();
 
@@ -33,6 +38,7 @@
 
 <main class="m-8">
 	<h1 class="mb-8 text-3xl">{title}</h1>
+	<h2 class="mb-4 text-xl text-gray-600" >{subTitle}</h2>
 	<div class="m-4">
 		<label for="minmax-range" class="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
 			>Fuzziness: {threshold}</label
@@ -63,7 +69,14 @@
 
 	<ul class="max-w-md list-inside list-disc space-y-1 text-gray-500 dark:text-gray-400 text-left w-96 m-auto">
 		{#each searchResults as result}
-			<li>{result.item[keys[0]]}: {result.item[keys[1]]}</li>
+		<li>
+			{#each fields as field, index}
+				{result.item[field]}
+				{#if index < fields.length - 1}
+					:&nbsp;
+				{/if}
+			{/each}
+		  </li>
 		{/each}
 	</ul>
 </main>
