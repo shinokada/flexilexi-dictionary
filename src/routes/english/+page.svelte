@@ -5,7 +5,7 @@
 	let threshold = $state(0);
 
 	let options = $derived({
-		keys: ["key", "value"],
+		keys: ["key"],
 		threshold: threshold
 	});
 
@@ -13,7 +13,9 @@
 	let searchInput = $state();
 
 	// fuse = new Fuse(dictionary, options);
-    const dictionaryArray = Object.keys(dictionary).map(key => ({ key, value: dictionary[key] }));
+    // const dictionaryArray = Object.keys(dictionary).map(key => ({ key, value: dictionary[key] }));
+	const dictionaryArray = Object.keys(dictionary).map(key => ({ key }));
+
 
  fuse = new Fuse(dictionaryArray, options);
 
@@ -62,7 +64,7 @@
 
 	<ul class="max-w-md list-inside list-disc space-y-1 text-gray-500 dark:text-gray-400 text-left w-96 m-auto">
 		{#each searchResults as result}
-            <li>{result.item.key}: {result.item.value}</li>
+            <li>{result.item.key}: {dictionary[result.item.key]}</li>
 		{/each}
 	</ul>
 </main>
