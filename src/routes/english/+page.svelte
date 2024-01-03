@@ -23,7 +23,7 @@
 
 	function handleSearch() {
 		searchResults = fuse.search(searchInput);
-		console.log('search ', searchResults);
+		// console.log('search ', searchResults);
 	}
 
 	function handleThreshold() {
@@ -33,7 +33,7 @@
 </script>
 
 <main class="m-8">
-	<h1 class="mb-8 text-3xl">Simple English dictionary</h1>
+	<h1 class="mb-8 text-3xl">English dictionary</h1>
 	<div class="m-4">
 		<label for="minmax-range" class="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
 			>Fuzziness: {threshold}</label

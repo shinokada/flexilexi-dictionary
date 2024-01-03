@@ -33,7 +33,7 @@
     <div class="{navClass} w-full lg:block lg:w-auto" id="navbar-default">
       <ul class="font-medium flex flex-col p-4 lg:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 lg:flex-row lg:space-x-8 rtl:space-x-reverse lg:mt-0 lg:border-0 bg-transparent dark:bg-gray-800 lg:dark:bg-gray-900 dark:border-gray-700">
         <li>
-          <a href="/" onclick={closeNav} aria-current={$page.url.pathname === '/'} class="{$page.url.pathname === '/' ? activeStyle : linkStyle}">Norwegian</a>
+          <a href="/" onclick={closeNav} aria-current={$page.url.pathname === '/'} class="{$page.url.pathname === '/' ? activeStyle : linkStyle}">Norsk</a>
         </li>
         <li>
           <a href="/english" onclick={closeNav} aria-current={$page.url.pathname === '/english'} class="{$page.url.pathname === '/english' ? activeStyle : linkStyle}">English</a>
