@@ -15,14 +15,14 @@
     navStatus = false
   }
 
-  const linkStyle = 'block py-2 px-3 text-md hover:underline text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-red-700 md:p-0 dark:text-white md:dark:hover:text-red-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent'
-  const activeStyle = 'block py-2 px-3 text-md hover:underline text-white bg-red-700 rounded md:bg-transparent md:text-red-700 md:p-0 dark:text-white md:dark:text-red-500'
+  const linkStyle = 'block py-2 px-3 text-md hover:underline text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-primary-700 md:p-0 dark:text-white md:dark:hover:text-primary-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent'
+  const activeStyle = 'block py-2 px-3 text-md hover:underline text-white bg-primary-700 rounded md:bg-transparent md:text-primary-700 md:p-0 dark:text-white md:dark:text-primary-500'
 </script>
 
 <nav class="bg-transparent border-gray-200 dark:bg-gray-900">
   <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
     <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
-        <span class="self-center text-2xl sm:text-3xl font-semibold whitespace-nowrap dark:text-white">FlexiLexi dictionary</span>
+        <span class="self-center text-2xl sm:text-3xl text-primary-900 font-semibold whitespace-nowrap dark:text-white">FlexiLexi dictionary</span>
     </a>
     <button onclick={toggleNav} type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default">
         <span class="sr-only">Open main menu</span>
