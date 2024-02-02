@@ -12,24 +12,31 @@
 		navStatus = nav.isOpen;
 	});
 
-	let divClass = "ml-auto w-full"
-    let ulClass =
-    'flex flex-col py-3 lg:flex-row lg:my-0 order-1 font-medium gap-4 lg:gap-2 dark:lg:bg-transparent lg:bg-white border-0';
-    let navClass = 'w-full divide-gray-200 border-gray-200 bg-white text-gray-500 dark:bg-zinc-900 dark:divide-gray-700 dark:border-gray-700 dark:text-gray-400 sm:px-4'
-
+	const navclass =
+		'w-full divide-gray-200 border-gray-200 bg-white text-gray-500 dark:divide-gray-700 dark:border-gray-700 dark:bg-zinc-900 sm:px-4';
+	const ulclass =
+		'mt-0 flex flex-col py-3 lg:flex-row lg:my-0 order-1 font-medium xl:gap-4 dark:lg:bg-transparent dark:bg-zinc-900 lg:bg-white border-0';
 </script>
-<header
-    class="sticky top-0 z-40 mx-auto w-full flex-none border-b border-gray-200 bg-white dark:border-gray-600 dark:bg-zinc-900"
-  >
-  <Navbar {navClass} {toggleNav} {closeNav} {navStatus} breakPoint="md" fluid divChildrenClass={divClass}>
 
+<header
+	class="sticky top-0 z-40 mx-auto w-full flex-none border-b border-gray-200 bg-white dark:border-gray-600 dark:bg-zinc-900 lg:pl-4"
+>
+	<Navbar
+		{toggleNav}
+		{closeNav}
+		{navStatus}
+		{navclass}
+		fluid
+		breakPoint="md"
+		div2class="ml-auto w-full"
+	>
 	{#snippet brand()}
 		<NavBrand siteName="FlexiLexi dictionary" {closeNav} />
 		<div class="flex items-center ml-auto md:order-1">
-            <Darkmode class="inline-block dark:hover:text-white hover:text-gray-900" />
+            <Darkmode btnclass="inline-block dark:hover:text-white hover:text-gray-900" />
         </div>
 	{/snippet}
-	<NavUl {ulClass}>
+	<NavUl {ulclass}>
 		<NavLi href="/" {closeNav}>Norsk</NavLi>
 		<NavLi href="/english" {closeNav}>English</NavLi>
 		<NavLi href="/japanese" {closeNav}>Japanese</NavLi>
