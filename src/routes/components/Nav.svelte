@@ -31,15 +31,16 @@
 		div2class="ml-auto w-full"
 	>
 	{#snippet brand()}
-		<NavBrand siteName="FlexiLexi dictionary" {closeNav} />
+		<NavBrand siteName="FlexiLexi dictionary" />
 		<div class="flex items-center ml-auto md:order-1">
             <Darkmode btnclass="inline-block dark:hover:text-white hover:text-gray-900" />
         </div>
 	{/snippet}
 	<NavUl {ulclass}>
-		<NavLi href="/" {closeNav}>Norsk</NavLi>
-		<NavLi href="/english" {closeNav}>English</NavLi>
-		<NavLi href="/japanese" {closeNav}>Japanese</NavLi>
+		<NavLi href="/">Norsk</NavLi>
+		<NavLi href="/english">English</NavLi>
+		<NavLi href="/japanese">Japanese</NavLi>
+		<NavLi href='/about'>About</NavLi>
 	</NavUl>
 </Navbar>
 </header>
