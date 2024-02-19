@@ -15,7 +15,7 @@
     Flexilexi dictionary is a flexible dictionary for English, Norwegian, and Japanese. 
   </p>
   
-  <h2>Another LexiLearn Hub apps</h2>
+  <h2>LexiLearn Hub Apps</h2>
   
     <ul class="m-4 list-disc p-4 text-left text-lg dark:text-gray-400">
       <li class="hover:text-red-700 hover:underline">
