@@ -1,6 +1,6 @@
 # FlexiLexi dictionary
 
-[FlexiLexi dictionary](https://flexilexi-dictionary.vercel.app/)
+[FlexiLexi dictionary](https://flexilexi-dictionary.codewithshin.com/)
 
 ## Requirements
 
