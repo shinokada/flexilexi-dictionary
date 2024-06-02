@@ -7,7 +7,7 @@ export const load = ({ url }) => {
   const description = metaDescription(url.pathname, basicDesc);
   const image = metaImg(url.pathname, __NAME__);
 
-  const pageMetaTags = {
+  const pageMetaTags: MetaProps = {
     title,
     description,
     og: {
