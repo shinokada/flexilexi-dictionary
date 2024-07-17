@@ -12,7 +12,7 @@
 		navStatus = nav.isOpen;
 	});
 
-	const navclass =
+	const navClass =
 		'w-full divide-gray-200 border-gray-200 bg-white text-gray-500 dark:divide-gray-700 dark:border-gray-700 dark:bg-zinc-900 sm:px-4';
 	const ulclass =
 		'mt-0 flex flex-col py-3 lg:flex-row lg:my-0 order-1 font-medium xl:gap-4 dark:lg:bg-transparent dark:bg-zinc-900 lg:bg-white border-0';
@@ -25,18 +25,18 @@
 		{toggleNav}
 		{closeNav}
 		{navStatus}
-		{navclass}
+		{navClass}
 		fluid
 		breakPoint="md"
-		div2class="ml-auto w-full"
+		div2Class="ml-auto w-full"
 	>
 	{#snippet brand()}
 		<NavBrand siteName="FlexiLexi dictionary" />
 		<div class="flex items-center ml-auto md:order-1">
-            <Darkmode btnclass="inline-block dark:hover:text-white hover:text-gray-900" />
+            <Darkmode class="inline-block dark:hover:text-white hover:text-gray-900" />
         </div>
 	{/snippet}
-	<NavUl {ulclass}>
+	<NavUl class={ulclass}>
 		<NavLi href="/">Norsk</NavLi>
 		<NavLi href="/english">English</NavLi>
 		<NavLi href="/japanese">Japanese</NavLi>
