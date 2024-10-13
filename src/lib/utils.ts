@@ -1,21 +1,23 @@
 export function removeHyphensAndCapitalize(str: string) {
-  // Handle empty string or strings without '-'
-  if (!str || !str.includes('-')) {
-    return str;
-  }
+	// Handle empty string or strings without '-'
+	if (!str || !str.includes('-')) {
+		return str;
+	}
 
-  // Capitalize the first letter (including after hyphens)
-  const capitalized = str.replace(/(^|\s|-)\w/g, (match) => match.toUpperCase());
+	// Capitalize the first letter (including after hyphens)
+	const capitalized = str.replace(/(^|\s|-)\w/g, (match) => match.toUpperCase());
 
-  // Remove hyphens and ensure spaces after words
-  return capitalized.replace(/-|\s{2,}/g, ' ');
+	// Remove hyphens and ensure spaces after words
+	return capitalized.replace(/-|\s{2,}/g, ' ');
 }
 
-export function randomword (wordList:string[]) {
+export function randomword(wordList: string[]) {
 	return wordList[Math.floor(Math.random() * wordList.length)];
 }
 
-export function getRandomItemFromDictionary(dictionary: { [key: string]: string }): { [key: string]: string } {
+export function getRandomItemFromDictionary(dictionary: { [key: string]: string }): {
+	[key: string]: string;
+} {
 	const keys = Object.keys(dictionary);
 	const randomKey = keys[Math.floor(Math.random() * keys.length)];
 
@@ -24,26 +26,29 @@ export function getRandomItemFromDictionary(dictionary: { [key: string]: string 
 	};
 }
 
-const randomNumberGenerator = (min: number, max: number, maxConsecutiveRepeats: number): () => number => {
-	let previousNumbers: number[] = [];
+const randomNumberGenerator = (
+	min: number,
+	max: number,
+	maxConsecutiveRepeats: number
+): (() => number) => {
+	const previousNumbers: number[] = [];
 
 	return (): number => {
-			let randomNumber: number;
+		let randomNumber: number;
 
-			do {
-					randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
-			} while (previousNumbers.includes(randomNumber));
+		do {
+			randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+		} while (previousNumbers.includes(randomNumber));
 
-			if (previousNumbers.length >= maxConsecutiveRepeats) {
-					previousNumbers.shift();
-			}
+		if (previousNumbers.length >= maxConsecutiveRepeats) {
+			previousNumbers.shift();
+		}
 
-			previousNumbers.push(randomNumber);
+		previousNumbers.push(randomNumber);
 
-			return randomNumber;
+		return randomNumber;
 	};
 };
-
 
 export function openTab(word: string, website: string) {
 	let baseUrl = '';
@@ -59,13 +64,13 @@ export function openTab(word: string, website: string) {
 
 export function cleanWord(word: string) {
 	// Remove characters after '/'
-	let withoutSlash = word.replace(/\/.*$/, '');
+	const withoutSlash = word.replace(/\/.*$/, '');
 
 	// Remove characters after ','
-	let withoutComma = withoutSlash.replace(/,.*/, '');
+	const withoutComma = withoutSlash.replace(/,.*/, '');
 
 	// Remove characters after ' -'
-	let withoutHyphen = withoutComma.replace(/ -.*/, '');
+	const withoutHyphen = withoutComma.replace(/ -.*/, '');
 
 	return withoutHyphen.trim(); // Trim to remove leading/trailing spaces
 }

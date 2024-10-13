@@ -19,7 +19,7 @@
 </script>
 
 <header
-	class="sticky top-0 z-40 mx-auto w-full flex-none border-b border-gray-200 bg-white dark:border-gray-600 dark:bg-zinc-900 lg:pl-4"
+	class="sticky top-0 z-40 mx-auto w-full flex-none border-b border-gray-200 bg-white lg:pl-4 dark:border-gray-600 dark:bg-zinc-900"
 >
 	<Navbar
 		{toggleNav}
@@ -30,17 +30,17 @@
 		breakPoint="md"
 		div2Class="ml-auto w-full"
 	>
-	{#snippet brand()}
-		<NavBrand siteName="FlexiLexi dictionary" />
-		<div class="flex items-center ml-auto md:order-1">
-            <Darkmode class="inline-block dark:hover:text-white hover:text-gray-900" />
-        </div>
-	{/snippet}
-	<NavUl class={ulclass}>
-		<NavLi href="/">Norsk</NavLi>
-		<NavLi href="/english">English</NavLi>
-		<NavLi href="/japanese">Japanese</NavLi>
-		<NavLi href='/about'>About</NavLi>
-	</NavUl>
-</Navbar>
+		{#snippet brand()}
+			<NavBrand siteName="FlexiLexi dictionary" />
+			<div class="ml-auto flex items-center md:order-1">
+				<Darkmode class="inline-block hover:text-gray-900 dark:hover:text-white" />
+			</div>
+		{/snippet}
+		<NavUl class={ulclass}>
+			<NavLi href="/">Norsk</NavLi>
+			<NavLi href="/english">English</NavLi>
+			<NavLi href="/japanese">Japanese</NavLi>
+			<NavLi href="/about">About</NavLi>
+		</NavUl>
+	</Navbar>
 </header>
