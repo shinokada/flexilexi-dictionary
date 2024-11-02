@@ -26,30 +26,6 @@ export function getRandomItemFromDictionary(dictionary: { [key: string]: string 
 	};
 }
 
-const randomNumberGenerator = (
-	min: number,
-	max: number,
-	maxConsecutiveRepeats: number
-): (() => number) => {
-	const previousNumbers: number[] = [];
-
-	return (): number => {
-		let randomNumber: number;
-
-		do {
-			randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
-		} while (previousNumbers.includes(randomNumber));
-
-		if (previousNumbers.length >= maxConsecutiveRepeats) {
-			previousNumbers.shift();
-		}
-
-		previousNumbers.push(randomNumber);
-
-		return randomNumber;
-	};
-};
-
 export function openTab(word: string, website: string) {
 	let baseUrl = '';
 	if (website === 'google') {

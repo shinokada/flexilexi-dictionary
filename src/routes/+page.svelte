@@ -1,9 +1,6 @@
 <script>
 	import dictionary from '$lib/data/norsk-dic.json';
 	import { FlexiLexi } from 'flexilexi';
-
-	const title = 'Norsk ordbok';
-	const subTitle = 'You can search Norwegian and Englsih.';
 </script>
 
 <h1 class="mb-8 text-4xl">Norsk ordbok</h1>
