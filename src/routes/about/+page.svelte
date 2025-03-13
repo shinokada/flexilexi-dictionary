@@ -54,12 +54,12 @@
 		</li>
 		<li class="hover:text-red-700 hover:underline">
 			<a
-				href="https://svelte-5-preview.codewithshin.com/docs/introduction"
-				class="me-4 hover:underline md:me-6">Svelte 5: {svelteVersion}</a
+				href="https://svelte.dev/"
+				class="me-4 hover:underline md:me-6">Svelte: {svelteVersion}</a
 			>
 		</li>
 		<li>
-			<a href="https://preview.svelte-5-ui-lib.com/" class="me-4 hover:underline md:me-6"
+			<a href="https://svelte-5-ui-lib.codewithshin.com/" class="me-4 hover:underline md:me-6"
 				>Svelte 5 UI Lib: {svelte5uilibVersion}</a
 			>
 		</li>
