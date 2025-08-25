@@ -72,8 +72,8 @@ importers:
         specifier: ^0.4.5
         version: 0.4.5(svelte@5.38.3)
       runes-webkit:
-        specifier: ^0.9.60
-        version: 0.9.60(@sveltejs/kit@2.36.2(@sveltejs/vite-plugin-svelte@6.1.3(svelte@5.38.3)(vite@6.3.5(jiti@2.5.1)(lightningcss@1.30.1)))(svelte@5.38.3)(vite@6.3.5(jiti@2.5.1)(lightningcss@1.30.1)))(highlight.js@11.11.1)(svelte-rune-highlight@0.5.13(svelte@5.38.3))(svelte@5.38.3)(tailwind-merge@3.3.1)(tailwind-variants@1.0.0(tailwindcss@4.1.12))
+        specifier: ^0.11.4
+        version: 0.11.4(@sveltejs/kit@2.36.2(@sveltejs/vite-plugin-svelte@6.1.3(svelte@5.38.3)(vite@6.3.5(jiti@2.5.1)(lightningcss@1.30.1)))(svelte@5.38.3)(vite@6.3.5(jiti@2.5.1)(lightningcss@1.30.1)))(svelte@5.38.3)(tailwindcss@4.1.12)
       svelte:
         specifier: ^5.38.3
         version: 5.38.3
@@ -1623,15 +1623,12 @@ packages:
     peerDependencies:
       svelte: ^5.0.0
 
-  runes-webkit@0.9.60:
-    resolution: {integrity: sha512-xBzzQgkjGNeqBM2VvAovNzzisMEfuP8qobaiwQhWrGinyCsxiuZ1cDConExcsXDqkYC2X6Td/Pn50LRUBIg8lA==}
+  runes-webkit@0.11.4:
+    resolution: {integrity: sha512-eCQOa77rSJ+NOI08quXtiW2h6fgY95V7dO+4pwm/OG+QyWoGxNXg0dFrepJmqtLlhSog2wuPB2KB1vQbLhbCiw==}
     peerDependencies:
       '@sveltejs/kit': ^2.5.5
-      highlight.js: ^11.10.0
-      svelte: ^5.0.0
-      svelte-rune-highlight: '>=0.5.11'
-      tailwind-merge: ^3.0.0
-      tailwind-variants: ^1.0.0
+      svelte: ^5.29.0
+      tailwindcss: ^4.1.11
 
   sade@1.8.1:
     resolution: {integrity: sha512-xal3CZX1Xlo/k4ApwCFrHVACi9fBqJ7V+mwhBsuf/1IOKbBy098Fex+Wa/5QMubw09pSZ/u8EY8PWgevJsXp1A==}
@@ -1715,9 +1712,8 @@ packages:
       svelte:
         optional: true
 
-  svelte-rune-highlight@0.5.13:
-    resolution: {integrity: sha512-9SiOw+x5NhybcsttWzT12/W7cONemK31mAJ2pUO/68TYnQGo+eZ4GS+EqGdTuUsr4t9+kFVrMRn9lfubnHQeEg==}
-    engines: {node: '>=20.0.0', npm: '>=8.0.0'}
+  svelte-rune-highlight@0.7.1:
+    resolution: {integrity: sha512-R/mzLB+QBt3WGSrYpCg/n3r7UzeqfrLx7Cv2JqH9LdckTeTT2MBxhuo1ZvLWss2QXnIyLTr0Wx4g6xOseMoSsA==}
     peerDependencies:
       svelte: ^5.0.0
 
@@ -1739,6 +1735,16 @@ packages:
     engines: {node: '>=16.x', pnpm: '>=7.x'}
     peerDependencies:
       tailwindcss: '*'
+
+  tailwind-variants@2.0.1:
+    resolution: {integrity: sha512-1wt8c4PWO3jbZcKGBrjIV8cehWarREw1C2os0k8Mcq0nof/CbafNhUUjb0LRWiiRfAvDK6v1deswtHLsygKglw==}
+    engines: {node: '>=16.x', pnpm: '>=7.x'}
+    peerDependencies:
+      tailwind-merge: '>=3.0.0'
+      tailwindcss: '*'
+    peerDependenciesMeta:
+      tailwind-merge:
+        optional: true
 
   tailwindcss@4.1.12:
     resolution: {integrity: sha512-DzFtxOi+7NsFf7DBtI3BJsynR+0Yp6etH+nRPTbpWnS2pZBaSksv/JGctNwSWzbFjp0vxSqknaUylseZqMDGrA==}
@@ -3304,14 +3310,16 @@ snapshots:
     dependencies:
       svelte: 5.38.3
 
-  runes-webkit@0.9.60(@sveltejs/kit@2.36.2(@sveltejs/vite-plugin-svelte@6.1.3(svelte@5.38.3)(vite@6.3.5(jiti@2.5.1)(lightningcss@1.30.1)))(svelte@5.38.3)(vite@6.3.5(jiti@2.5.1)(lightningcss@1.30.1)))(highlight.js@11.11.1)(svelte-rune-highlight@0.5.13(svelte@5.38.3))(svelte@5.38.3)(tailwind-merge@3.3.1)(tailwind-variants@1.0.0(tailwindcss@4.1.12)):
+  runes-webkit@0.11.4(@sveltejs/kit@2.36.2(@sveltejs/vite-plugin-svelte@6.1.3(svelte@5.38.3)(vite@6.3.5(jiti@2.5.1)(lightningcss@1.30.1)))(svelte@5.38.3)(vite@6.3.5(jiti@2.5.1)(lightningcss@1.30.1)))(svelte@5.38.3)(tailwindcss@4.1.12):
     dependencies:
       '@sveltejs/kit': 2.36.2(@sveltejs/vite-plugin-svelte@6.1.3(svelte@5.38.3)(vite@6.3.5(jiti@2.5.1)(lightningcss@1.30.1)))(svelte@5.38.3)(vite@6.3.5(jiti@2.5.1)(lightningcss@1.30.1))
+      clsx: 2.1.1
       highlight.js: 11.11.1
       svelte: 5.38.3
-      svelte-rune-highlight: 0.5.13(svelte@5.38.3)
+      svelte-rune-highlight: 0.7.1(svelte@5.38.3)
       tailwind-merge: 3.3.1
-      tailwind-variants: 1.0.0(tailwindcss@4.1.12)
+      tailwind-variants: 2.0.1(tailwind-merge@3.3.1)(tailwindcss@4.1.12)
+      tailwindcss: 4.1.12
 
   sade@1.8.1:
     dependencies:
@@ -3396,7 +3404,7 @@ snapshots:
     optionalDependencies:
       svelte: 5.38.3
 
-  svelte-rune-highlight@0.5.13(svelte@5.38.3):
+  svelte-rune-highlight@0.7.1(svelte@5.38.3):
     dependencies:
       highlight.js: 11.11.1
       svelte: 5.38.3
@@ -3428,6 +3436,12 @@ snapshots:
     dependencies:
       tailwind-merge: 3.0.2
       tailwindcss: 4.1.12
+
+  tailwind-variants@2.0.1(tailwind-merge@3.3.1)(tailwindcss@4.1.12):
+    dependencies:
+      tailwindcss: 4.1.12
+    optionalDependencies:
+      tailwind-merge: 3.3.1
 
   tailwindcss@4.1.12: {}
 
