@@ -1,6 +1,6 @@
 <script>
-	import dictionary from '$lib/data/norsk-dic.json';
-	import { FlexiLexi } from 'flexilexi';
+  import dictionary from '$lib/data/norsk-dic.json';
+  import { FlexiLexi } from 'flexilexi';
 </script>
 
 <h1 class="mb-8 text-4xl">Norsk ordbok</h1>

@@ -1,53 +1,66 @@
 <script>
-	import { Navbar, NavLi, NavBrand, NavUl, uiHelpers, Darkmode } from 'svelte-5-ui-lib';
-	import { page } from '$app/stores';
+  import { Navbar, NavLi, NavBrand, NavHamburger, NavUl, DarkMode, Dropdown, DropdownItem } from 'flowbite-svelte';
+  import { page } from '$app/state';
+  import {
+    DotsHorizontalOutline,
+    GithubSolid,
+    XSolid,
+    Bluesky
+  } from "runes-webkit";
 
-	let activeUrl = $state($page.url.pathname);
-	$effect(() => {
-		activeUrl = $page.url.pathname;
-	});
+  let activeUrl = $state(page.url.pathname);
+  $effect(() => {
+    activeUrl = page.url.pathname;
+  });
 
-	let nav = uiHelpers();
+  const githubUrl = `https://github.com/shinokada/${__NAME__}`;
+  const twitterUrl = "https://twitter.com/shinokada";
+  const blueskyUrl = "https://bsky.app/profile/codewithshin.com";
 
-	let navStatus = $state(false);
-	let toggleNav = nav.toggle;
-	let closeNav = nav.close;
-
-	$effect(() => {
-		// this can be done adding nav.navStatus directly to DOM element
-		// without using effect
-		navStatus = nav.isOpen;
-	});
-
-	const navClass =
-		'w-full divide-gray-200 border-gray-200 bg-white text-gray-500 dark:divide-gray-700 dark:border-gray-700 dark:bg-zinc-900 sm:px-4';
-	const ulclass =
-		'mt-0 flex flex-col py-3 lg:flex-row lg:my-0 order-1 font-medium xl:gap-4 dark:lg:bg-transparent dark:bg-zinc-900 lg:bg-white border-0';
+  let activeClass = "p-2 text-sm lg:text-base";
+  let nonActiveClass = "p-2 text-sm lg:text-base";
 </script>
 
-<header
-	class="sticky top-0 z-40 mx-auto w-full flex-none border-b border-gray-200 bg-white lg:pl-4 dark:border-gray-600 dark:bg-zinc-900"
+<Navbar
+	breakpoint="lg"
+	fluid
+	class="fixed top-0 left-0 z-50 border-b border-gray-100 bg-white  sm:px-12 dark:border-gray-700 dark:bg-stone-950"
+	navContainerClass="lg:justify-between"
 >
-	<Navbar
-		{toggleNav}
-		{closeNav}
-		{navStatus}
-		{navClass}
-		fluid
-		breakPoint="md"
-		div2Class="ml-auto w-full"
+	<NavBrand href="/">
+		<span class="text-primary-900 dark:text-primary-500 self-center text-2xl font-semibold whitespace-nowrap lg:text-3xl"
+			>Flexilexi Dictionary</span
+		>
+	</NavBrand>
+	<div class="flex justify-end lg:order-2">
+		<NavHamburger class="order-3" />
+		<DotsHorizontalOutline class="mt-1.5 mr-4 ml-6 dark:text-white" size="lg" />
+		<Dropdown simple class="p-1">
+			{#if blueskyUrl}
+				<DropdownItem href={blueskyUrl} target="_blank" class="m-0 p-0.5">
+					<Bluesky size="30" />
+				</DropdownItem>
+			{/if}
+			{#if twitterUrl}
+				<DropdownItem href={twitterUrl} target="_blank" class="m-0 p-2"><XSolid /></DropdownItem>
+			{/if}
+			{#if githubUrl}
+				<DropdownItem href={githubUrl} target="_blank" class="m-0 p-2">
+					<GithubSolid />
+				</DropdownItem>
+			{/if}
+		</Dropdown>
+		<DarkMode class="m-0 p-2" />
+	</div>
+	<NavUl
+		breakpoint="lg"
+		{activeUrl}
+		class="order-2 lg:order-1"
+		classes={{ active: activeClass, nonActive: nonActiveClass, ul: 'p-0' }}
 	>
-		{#snippet brand()}
-			<NavBrand siteName="FlexiLexi dictionary" />
-			<div class="ml-auto flex items-center md:order-1">
-				<Darkmode class="inline-block hover:text-gray-900 dark:hover:text-white" />
-			</div>
-		{/snippet}
-		<NavUl {activeUrl} class={ulclass}>
-			<NavLi href="/">Norsk</NavLi>
-			<NavLi href="/english">English</NavLi>
-			<NavLi href="/japanese">Japanese</NavLi>
-			<NavLi href="/about">About</NavLi>
-		</NavUl>
-	</Navbar>
-</header>
+		<NavLi href="/">Norsk</NavLi>
+    <NavLi href="/english">English</NavLi>
+    <NavLi href="/japanese">Japanese</NavLi>
+    <NavLi href="/about">About</NavLi>
+	</NavUl>
+</Navbar>
